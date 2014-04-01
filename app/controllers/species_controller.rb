@@ -22,4 +22,18 @@ class SpeciesController < ApplicationController
     @species = Species.find(params[:id])
     render('species/show.html.erb')
   end
+
+  def edit
+    @species = Species.find(params[:id])
+    render('species/edit.html.erb')
+  end
+
+  def update
+    @species = Species.find(params[:id])
+    if @species.update(name: params[:name])
+      render('species/success.html.erb')
+    else
+      render('species/edit.html.erb')
+    end
+  end
 end
