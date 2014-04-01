@@ -1,0 +1,15 @@
+<h1>Species Sighting Information</h1>
+
+<h4>A Majestic <%= @species.name %> was spotted:</h4>
+<p>On: <%= @sighting.date %> in or near the <%= @sighting.location %>.</p>
+
+
+<p><a href="/sightings/<%= @sighting.id %>/edit">Edit.</a></p>
+<p><a href="/sightings/<%= @sighting.id %>"
+    data-confirm="Are you sure?"
+    data-method="delete"
+    rel="nofollow">Delete.</a></p>
+
+<a href='/species'>Return to species index</a>
+<a href='/sightings'>Return to sightings index</a>
+

@@ -1,12 +1,18 @@
-<h1>Species</h1>
+<div class="container species">
 
-
-<form action="/species" method="post">
-  <input id="species_name" class="form-control" type="text" name="name">
-  <button>Add a Species</button>
-</form>
+  <h1>Species</h1>
+  <form action="/species" method="post" class="col-md-3">
+    <input id="species_name" class="form-control" type="text" name="name">
+      <div class="col-md-9"></div>
+    <button class="btn btn-default">Add a Species</button>
+  </form>
+</div>
 
 <ul><% @species.each do |species| %>
   <li><a href="/species/<%= species.id %>"><%= species.name %></a></li>
 <% end %>
 </ul>
+
+<div id="hugedeer">
+<%= image_tag "SmallDeer.png" %>
+  </div>
