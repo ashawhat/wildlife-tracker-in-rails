@@ -4,6 +4,11 @@ body{
 
 
 }
+.btn {
+  background-color: #ADADAD !important;
+  text-shadow: 1px 1px white !important;
+  font-weight: bold !important;
+}
 
 .species {
 }
@@ -15,8 +20,8 @@ body{
 
 li{
   padding-top: 5px;
-  list-style: none;
   color: black;
+  font-size:1.3em;
 }
 a {
   color: black;
@@ -68,5 +73,8 @@ a:visited{
 
 }
 #date {
+  width: 200px;
+}
+#location {
   width: 200px;
 }
