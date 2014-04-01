@@ -1,12 +1,12 @@
 <h1>Species</h1>
 
 
-<form action="species" method="post">
+<form action="/species" method="post">
   <input id="species_name" class="form-control" type="text" name="name">
   <button>Add a Species</button>
 </form>
 
 <ul><% @species.each do |species| %>
-  <li><%= species.name %></li>
+  <li><a href="/species/<%= species.id %>"><%= species.name %></a></li>
 <% end %>
 </ul>
