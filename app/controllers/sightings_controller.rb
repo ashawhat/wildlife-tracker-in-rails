@@ -16,7 +16,9 @@ class SightingsController < ApplicationController
   end
 
   def create
-    @sighting = Sighting.new(params)
+    @sighting = Sighting.create(:location => params[:location],
+                             :date => params[:date],
+                             :species_id => params[:species_id])
     if @sighting.save
       render('sightings/success.html.erb')
     else
