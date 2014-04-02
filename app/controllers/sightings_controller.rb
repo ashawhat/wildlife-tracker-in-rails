@@ -15,6 +15,17 @@ class SightingsController < ApplicationController
     @sighting = Sighting.new
   end
 
+  def update
+    @sighting = Sighting.find(params[:id])
+    if @sighting.update(:location => params[:location],
+                             # :date => params[:date],
+                             :species_id => params[:species_id])
+      render('sightings/success.html.erb')
+    else
+      render('sightings/edit.html.erb')
+    end
+  end
+
   def create
     @sighting = Sighting.create(:location => params[:location],
                              :date => params[:date],
@@ -24,5 +35,10 @@ class SightingsController < ApplicationController
     else
       render('sightings/index.html.erb')
     end
+  end
+
+  def edit
+    @sighting = Sighting.find(params[:id])
+    render('sightings/edit.html.erb')
   end
 end

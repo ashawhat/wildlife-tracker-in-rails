@@ -1,0 +1,24 @@
+<h1>Edit Selected Sighting Information</h1>
+<% if @sighting.errors.any? %>
+  <h3>Please Fix These Errors:</h3>
+<% end %>
+
+<ul>
+  <% @sighting.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+</ul>
+
+<% end %>
+
+<form action="/sightings/<%= @sighting.id %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for name="species_id">Species:</label><br>
+  <%= select_tag(:species_id, options_for_select([
+     ['Brown Bear', 1], ['Red Panda Fox', 2],
+     ['Bald Eagle', 11], ['River Otter', 12],
+     ['Wolverine', 3], ['Salmon', 13]])) %><br>
+  <label for="sighting_location">Location</label>
+
+  <input id="location" name="location" type="text" value="<%= @sighting.location %>">
+  <button>Update Sighting</button>
+</form>
